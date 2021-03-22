@@ -10,11 +10,15 @@ public class Main {
         linkedList.insert(1, 0);
         linkedList.insert(1, 0);
         linkedList.insert(1, 10);
-        System.out.println(linkedList.get(10));
-        linkedList.display();
-        System.out.println(" ");
-        linkedList.set(6, 100);
 
+        System.out.println("get: " + linkedList.get(10));
+        linkedList.display();
+        System.out.println();
+        System.out.println("set");
+        linkedList.set(6, 100);
+        System.out.println();
+        System.out.println("remove ");
+        linkedList.remuve(4);
 
     }
 }

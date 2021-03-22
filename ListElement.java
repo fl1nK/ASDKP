@@ -78,6 +78,36 @@ class LinkedList<T> {
 
     }
 
+    public void remuve(int position) {
+
+        if (empty())
+            throw new IllegalArgumentException("Empty");
+
+        if (position == 1) {
+            start = start.next;
+        } else if (position == size()) {
+            Node<T> startPtr = start;
+            Node<T> endPtr = start;
+            while (startPtr.next != null) {
+                endPtr = startPtr;
+                startPtr = startPtr.next;
+            }
+            endPtr.next = null;
+            end = endPtr;
+        } else {
+            position -= 1;
+            Node<T> startPtr = start;
+            for (int i = 1; i <= position; i++) {
+                if (i == position) {
+                    Node<T> temp = startPtr.next.next;
+                    startPtr.next = temp;
+                }
+                startPtr = startPtr.next;
+            }
+        }
+        display();
+    }
+
     public int get(T data) {
         if (empty())
             throw new IllegalArgumentException("Empty");
